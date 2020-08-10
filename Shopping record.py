@@ -15,3 +15,6 @@ while True:
     #product.append(p)
     product.append([name, price])
 print('Products storage: ', product)
+
+for things in product :
+    print(things[0], 'has a price at', things[1])
