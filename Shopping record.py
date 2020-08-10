@@ -5,6 +5,7 @@ while True:
         print('Good bye!')
         break
     price = input('Please enter the price: ')
+    price = int(price)
     if price == 'quit':
         print('Good bye!')
         break
@@ -18,3 +19,7 @@ print('Products storage: ', product)
 
 for things in product :
     print(things[0], 'has a price at', things[1])
+
+with open('products.csv', 'w') as f :
+    for p in product:
+        f.write(p[0]  + ',' + str(p[1]) + '\n')
