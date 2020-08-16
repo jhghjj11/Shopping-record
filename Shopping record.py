@@ -1,11 +1,21 @@
 product = []
+
+with open('products.csv', 'r', encoding = 'utf-8') as d:
+    for line in d:
+        if '第一, 第二' in line:
+            continue
+        name, price = line.strip().split(',')
+        product.append([name, price])
+        #name = s[0]
+        #price = s[1]
+    print(product)
+
 while True:
     name = input("Please enter product's name: ")
     if name == 'quit':
         print('Good bye!')
         break
     price = input('Please enter the price: ')
-
     if price == 'quit':
         print('Good bye!')
         break
